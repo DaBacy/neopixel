@@ -6,6 +6,12 @@ input.onButtonPressed(Button.A, function () {
         basic.pause(100)
     }
 })
+input.onButtonPressed(Button.AB, function () {
+    strip.clear()
+    while (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B)) {
+        strip.setPixelColor(randint(0, 14), neopixel.rgb(randint(0, 64), randint(0, 64), randint(0, 64)))
+    }
+})
 input.onButtonPressed(Button.B, function () {
     strip.clear()
     while (!(input.buttonIsPressed(Button.A))) {
